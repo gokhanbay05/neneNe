@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    
+    {% for tweet in tweets %}
+
+        <div class="card shadow-lg" style="padding: 0.5em; margin: 1.5em; background-color: #2C3E50;">
+
+            <div class="card-body">
+
+                <h6 style="color: #F1F3F4;" class="card-title">{{tweet.nickname}} demiş ki:</h6>
+
+                <p style="color: #EAEAEA;" class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{tweet.message}}</p>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+    
+</div>
+{% endblock %}

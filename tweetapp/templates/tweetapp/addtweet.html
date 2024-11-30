@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="mb-3" style="margin: 1.5em;">
+          <label style="color: #F1F3F4;" for="nickname" class="form-label">adın:</label>
+          <input style="background-color: #2C3E50; color: #F1F3F4;" id="nickname" name="nickname" class="form-control" type="text" value={{user.username}} aria-label="readonly input example" readonly>
+          <div style="color: #F1F3F4; opacity: 0.5;" id="adın" class="form-text">burayı değiştiremiyon öylesine koydum:)</div>
+        </div>
+        <div class="mb-3" style="margin: 1.5em;">
+          <label style="color: #F1F3F4;" for="message" class="form-label">eee?:</label>
+          <textarea style="background-color: #2C3E50; color: #F1F3F4;" type="text" class="form-control" id="message" rows="3" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin: 1.5em;">p a y l a ş ş ş ş</button>
+      </form>
+</div>
+
+{% endblock %}

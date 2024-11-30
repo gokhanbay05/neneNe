@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <div class="container">
+
+            {% if user.is_authenticated %}
+    
+            <h2 style="margin: 1.5em; color: #F1F3F4;">{{ user.username }}, zaten giriş yapmışsın ya kuzum?</h2>
+        
+            {% else %}
+
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3" style="margin: 1.5em;">
+                <label style="color: #F1F3F4;" for="username" class="form-label">adın:</label>
+                <input style="background-color: #2C3E50; color: #F1F3F4;" type="text" class="form-control" id="username" name="username">
+                </div>
+                <div class="mb-3" style="margin: 1.5em;">
+                <label style="color: #F1F3F4;" for="password" class="form-label">şifremiz:)</label>
+                <input style="background-color: #2C3E50; color: #F1F3F4;" type="password" class="form-control" id="password" name="password">
+                <div style="color: #F1F3F4; opacity: 0.5;" id="saka" class="form-text">şaka şaka harbi göremiyom</div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin: 1.5em;">giriş yapıyorum</button>
+            </form>
+
+            {% if form.errors %}
+
+            <p style="margin: 1.5em;">Username and password didn't match, please try again</p>
+        
+            {% endif %} 
+        </div>
+
+    {% endif %}
+
+{% endblock %}
